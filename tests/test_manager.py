@@ -15,3 +15,11 @@ def test_delete_task():
     task = manager.add("Delete me")
     manager.delete(task["id"])
     assert manager.list_tasks() == []
+
+
+def test_completed_task_is_not_pending():
+    manager = TaskManager()
+    task = manager.add("Finish assignment")
+    manager.complete(task["id"])
+    assert task not in manager.list_tasks("pending")
+    assert task in manager.list_tasks("completed")
