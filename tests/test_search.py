@@ -1,11 +1,12 @@
 from taskforge.search import search_tasks
 
+
 def test_exact_case_search():
     tasks = [{"id": 1, "title": "Learn Python"}]
     assert len(search_tasks(tasks, "Python")) == 1
-def test_search_tasks_ignores_case():
-    from taskforge.search import search_tasks
 
+
+def test_search_tasks_ignores_case():
     tasks = [
         {"id": 1, "title": "Learn Python"},
         {"id": 2, "title": "LEARN PYTHON"},
@@ -20,8 +21,6 @@ def test_search_tasks_ignores_case():
 
 
 def test_search_does_not_modify_task_titles():
-    from taskforge.search import search_tasks
-
     tasks = [{"id": 1, "title": "Learn PYTHON"}]
 
     search_tasks(tasks, "python")
