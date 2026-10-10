@@ -1,29 +1,30 @@
 # OSPC Recruitment — Round 1 Submission
 
-**Name:**  
-**Registration Number:**  
-**Year:**  
-**GitHub Username:**  
+**Sayan Sanai:**  
+**26BCE5406:**  
+**1st year:**  
+**sayzz-06:**  
 **Issue Number:**
 
 ## Problem Identified
-Describe the issue and its root cause.
+In main.py  manager = TaskManager(load_tasks()) is written outside the try block
 
 ## Changes Made
-Explain what you changed and why.
+The manager = TaskManager(load_tasks()) is written inside the task block.
+try block ensures that any file-loading errors or parsing issues are  caught and handled by   parser.exit(1, f"Error: {exc}\n") in except block
 
 ## Testing
 Describe tests performed, results, and commands or screenshots if useful.
 
 ## Challenges Faced
-Describe one technical difficulty and how you solved it.
+I have done this thing for the first time as I am a fresher. I couldn't understand most of the things. But while visiting the main.py file I thougt this could be a major bug.
 
 ## AI Tool Usage
-Disclose whether AI tools were used and how their output was verified.
+I used gemini to know how to access the github file.
 
 ## Checklist
-- [ ] I worked on my own fork and branch.
-- [ ] My changes address the selected issue.
+- [ok] I worked on my own fork and branch.
+- [ok] My changes address the selected issue.
 - [ ] I tested my changes.
-- [ ] I documented the changes.
-- [ ] I can explain my implementation during the interview.
+- [ok] I documented the changes.
+- [ok] I can explain my implementation during the interview.
