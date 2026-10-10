@@ -28,6 +28,17 @@ python main.py delete 1
 python main.py search git
 ```
 
+## Task storage
+
+Tasks are saved as UTF-8 JSON in `tasks.json` in the current working directory.
+Run commands from the same directory to keep using the same task list. A
+missing file starts an empty list; successful commands save the current tasks,
+including an empty list after deleting the last task.
+
+If the file contains malformed JSON or does not contain a JSON list, the CLI
+reports an error without overwriting it. Fix the file, or back it up and move it
+aside before running another command to start with an empty task list.
+
 ## Choosing your issue
 
 Read the GitHub Issues tab after the organizers publish the issue descriptions. Choose **one** issue in your track. The issue descriptions are also available in the organizer handoff package (not this public repository). Multiple candidates may work on the same issue.
