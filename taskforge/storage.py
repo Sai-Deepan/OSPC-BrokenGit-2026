@@ -25,3 +25,4 @@ def load_tasks(path=DEFAULT_PATH):
             "Fix the file or delete it to start fresh."
         )
     return data
+    
