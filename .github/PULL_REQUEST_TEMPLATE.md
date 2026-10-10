@@ -28,7 +28,7 @@ Result: All 6 tests passed.
 Geting to understand what the main aim of the program , also the part where the change of task happen was a bit tough.
 
 ## AI Tool Usage
-yes , used chatgpt for knowing syntax and what the code actually does , but did not make it do my job. I mannualy verified what it said with the proof from the above screen shot.
+yes , used chatgpt for knowing syntax and what the code actually does , but did not make it do my job. I mannualy verified what it said with my results.
 
 ## Checklist
 - [ yes] I worked on my own fork and branch.
