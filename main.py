@@ -18,8 +18,8 @@ def main():
     search = sub.add_parser("search")
     search.add_argument("query")
     args = parser.parse_args()
-    manager = TaskManager(load_tasks())
     try:
+        manager = TaskManager(load_tasks())
         if args.command == "add":
             print("Added:", manager.add(args.title))
         elif args.command == "complete":
