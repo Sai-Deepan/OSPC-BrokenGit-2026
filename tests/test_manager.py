@@ -15,3 +15,9 @@ def test_delete_task():
     task = manager.add("Delete me")
     manager.delete(task["id"])
     assert manager.list_tasks() == []
+
+def test_add_task_rejects_whitespace_title():
+    manager = TaskManager()
+
+    with pytest.raises(ValueError):
+        manager.add("   ")
