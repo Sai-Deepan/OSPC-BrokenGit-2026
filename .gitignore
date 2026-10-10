@@ -3,3 +3,8 @@ __pycache__/
 .venv/
 tasks.json
 *.pyc
+
+# Test coverage artifacts
+.coverage
+coverage.xml
+htmlcov/
