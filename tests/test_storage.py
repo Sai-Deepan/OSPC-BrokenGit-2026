@@ -20,4 +20,3 @@ def test_wrong_structure_raises_clear_error(tmp_path):
     path.write_text('{"id": 1}', encoding="utf-8")
     with pytest.raises(ValueError, match="expected a JSON list"):
         load_tasks(path)
-        
