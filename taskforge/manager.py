@@ -1,12 +1,21 @@
 from .validator import validate_title
 
+VALID_PRIORITIES = {"low", "medium", "high"}
+
 class TaskManager:
     def __init__(self, tasks=None):
         self.tasks = list(tasks or [])
 
-    def add(self, title):
+    def add(self, title, priority="medium"):
         title = validate_title(title)
-        task = {"id": len(self.tasks) + 1, "title": title, "completed": False, "priority": "medium"}
+        if priority not in VALID_PRIORITIES:
+            raise ValueError(f"Invalid priority '{priority}'. Allowed values: low, medium, high")
+        task = {
+            "id": len(self.tasks) + 1,
+            "title": title,
+            "completed": False,
+            "priority": priority
+        }
         self.tasks.append(task)
         return task
 
@@ -23,9 +32,17 @@ class TaskManager:
                 return self.tasks.pop(index)
         raise ValueError("Task not found")
 
-    def list_tasks(self, status=None):
+    def list_tasks(self, status=None, priority=None):
+        filtered = self.tasks
+
         if status == "pending":
-            return [t for t in self.tasks if not t["completed"]]
-        if status == "completed":
-            return [t for t in self.tasks if t["completed"]]
-        return list(self.tasks)
+            filtered = [t for t in filtered if not t.get("completed", False)]
+        elif status == "completed":
+            filtered = [t for t in filtered if t.get("completed", False)]
+
+        if priority:
+            if priority not in VALID_PRIORITIES:
+                raise ValueError(f"Invalid priority '{priority}'. Allowed values: low, medium, high")
+            filtered = [t for t in filtered if t.get("priority", "medium") == priority]
+
+        return list(filtered)
