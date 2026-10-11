@@ -13,7 +13,7 @@ class TaskManager:
     def complete(self, task_id):
         for task in self.tasks:
             if task["id"] == task_id:
-                task["done"] = True  # Intentional recruitment bug A1
+                task["completed"] = True  
                 return task
         raise ValueError("Task not found")
 
