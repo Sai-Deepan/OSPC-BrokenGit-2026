@@ -15,3 +15,4 @@ def test_delete_task():
     task = manager.add("Delete me")
     manager.delete(task["id"])
     assert manager.list_tasks() == []
+
