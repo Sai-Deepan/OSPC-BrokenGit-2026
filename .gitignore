@@ -3,3 +3,6 @@ __pycache__/
 .venv/
 tasks.json
 *.pyc
+.coverage
+coverage.xml
+htmlcov/

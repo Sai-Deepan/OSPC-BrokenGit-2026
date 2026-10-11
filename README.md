@@ -11,7 +11,8 @@ Requires Python 3.10+.
 ```bash
 python -m pip install -r requirements.txt
 python -m pytest
-python main.py add "Learn Git"
+python -m pytest --cov=taskforge --cov-report=term-missing
+python main.py add "Learn Git" --priority high
 python main.py list
 ```
 
@@ -21,8 +22,10 @@ python main.py list
 
 ```bash
 python main.py add "Learn Git"
+python main.py add "Fix Bug" --priority high
 python main.py list
 python main.py list --status pending
+python main.py list --priority high
 python main.py complete 1
 python main.py delete 1
 python main.py search git
