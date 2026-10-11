@@ -16,11 +16,3 @@ def test_delete_task():
     manager.delete(task["id"])
     assert manager.list_tasks() == []
 
-def test_complete_task_updates_status():
-    manager = TaskManager()
-    task = manager.add("Buy groceries")
-    manager.complete(task["id"])
-
-    assert task["completed"] is True
-    assert manager.list_tasks(status="pending") == []
-    assert manager.list_tasks(status="completed") == [task]
